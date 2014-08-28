@@ -1,0 +1,289 @@
+J:\Triglav_Web_App\Triglav\Web\bin\Web.dll
+J:\Triglav_Web_App\Triglav\Web\bin\Web.pdb
+J:\Triglav_Web_App\Triglav\Web\bin\Data.dll
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.Contrib.Memory.dll
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.dll
+J:\Triglav_Web_App\Triglav\Web\bin\EntityFramework.dll
+J:\Triglav_Web_App\Triglav\Web\bin\Data.pdb
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.xml
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.Contrib.Memory.pdb
+J:\Triglav_Web_App\Triglav\Web\bin\Lucene.Net.Contrib.Memory.xml
+J:\Triglav_Web_App\Triglav\Web\bin\EntityFramework.xml
+J:\Triglav_Web_App\Triglav\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+J:\Triglav_Web_App\Triglav\Web\obj\Debug\Web.dll
+J:\Triglav_Web_App\Triglav\Web\obj\Debug\Web.pdb
+J:\Triglav_Web_App\Triglav\Web\bin\VDS.Common.pdb
+J:\Triglav_Web_App\Triglav\Web\bin\VDS.Common.xml
+C:\FIT_KMS\Web\bin\Web.dll
+C:\FIT_KMS\Web\bin\Web.pdb
+C:\FIT_KMS\Web\bin\Data.dll
+C:\FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\FIT_KMS\Web\bin\Lucene.Net.dll
+C:\FIT_KMS\Web\bin\EntityFramework.dll
+C:\FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\FIT_KMS\Web\bin\Data.pdb
+C:\FIT_KMS\Web\bin\Lucene.Net.xml
+C:\FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\FIT_KMS\Web\bin\VDS.Common.pdb
+C:\FIT_KMS\Web\bin\VDS.Common.xml
+C:\FIT_KMS\Web\bin\EntityFramework.xml
+C:\FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\FIT_KMS\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\FIT_KMS\Web\obj\Debug\Web.dll
+C:\FIT_KMS\Web\obj\Debug\Web.pdb
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Web.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Web.pdb
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Data.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\EntityFramework.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Data.pdb
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.xml
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\VDS.Common.pdb
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\VDS.Common.xml
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\EntityFramework.xml
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\Users\Elvis\Desktop\FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\Users\Elvis\Desktop\FIT_KMS\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Elvis\Desktop\FIT_KMS\Web\obj\Debug\Web.dll
+C:\Users\Elvis\Desktop\FIT_KMS\Web\obj\Debug\Web.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Web.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Web.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Data.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\EntityFramework.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Data.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\VDS.Common.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\VDS.Common.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\EntityFramework.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\obj\Debug\Web.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\obj\Debug\Web.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\AntiXssLibrary.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\AntiXssLibrary.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\AjaxControlToolkit.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\AjaxMin.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Web.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Web.pdb
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\AjaxControlToolkit.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\AjaxMin.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\AntiXssLibrary.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Data.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\log4net.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Owasp.Esapi.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\EntityFramework.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Data.pdb
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\AntiXssLibrary.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\VDS.Common.pdb
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\VDS.Common.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\EntityFramework.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\obj\Debug\Web.dll
+C:\Users\Elvis\Desktop\09_NWT\FIT_KMS_Aplikacija\Web\obj\Debug\Web.pdb
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\Web.dll.config
+C:\Users\Elvis\Desktop\FIT_KMS_Aplikacija\Web\bin\VDS.Common.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Web.dll.config
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Web.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Web.pdb
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\AjaxControlToolkit.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\AjaxMin.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\AntiXssLibrary.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Data.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\VDS.Common.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\EntityFramework.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Data.pdb
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\AntiXssLibrary.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\VDS.Common.pdb
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\VDS.Common.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\EntityFramework.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\obj\Debug\Web.dll
+C:\Users\Elvis\Desktop\MASTER_FIT_KMS\Web\obj\Debug\Web.pdb
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Web.dll.config
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Web.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Web.pdb
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Accord.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Accord.Math.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Accord.Statistics.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AForge.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AForge.Math.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AjaxControlToolkit.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AjaxMin.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AntiXssLibrary.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Data.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\VDS.Common.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\EntityFramework.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Data.pdb
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Accord.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Accord.Math.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Accord.Statistics.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AForge.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AForge.Math.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\AntiXssLibrary.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\VDS.Common.pdb
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\VDS.Common.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\EntityFramework.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\obj\Debug\Web.dll
+C:\Users\Elvis\Desktop\WWW_ELVIS\MASTER_FIT_KMS\Web\obj\Debug\Web.pdb
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Web.dll.config
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Web.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Web.pdb
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Accord.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Accord.Math.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Accord.Statistics.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AForge.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AForge.Math.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AjaxControlToolkit.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AjaxMin.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AntiXssLibrary.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Data.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\HtmlSanitizationLibrary.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\VDS.Common.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\EntityFramework.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Data.pdb
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Accord.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Accord.Math.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Accord.Statistics.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AForge.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AForge.Math.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\AntiXssLibrary.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\HtmlSanitizationLibrary.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\VDS.Common.pdb
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\VDS.Common.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\EntityFramework.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.Contrib.Memory.pdb
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\Lucene.Net.Contrib.Memory.xml
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\obj\Debug\Web.dll
+C:\Users\Elvis\Desktop\Sistemi preporuke u kolaborativnom web okruženju\fitckms\Web\obj\Debug\Web.pdb

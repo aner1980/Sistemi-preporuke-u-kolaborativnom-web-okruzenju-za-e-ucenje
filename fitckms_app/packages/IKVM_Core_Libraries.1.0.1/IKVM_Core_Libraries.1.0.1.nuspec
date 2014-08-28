@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>IKVM_Core_Libraries</id>
+    <version>1.0.1</version>
+    <title>Core IKVM Libraries.</title>
+    <authors>emir01</authors>
+    <owners>emir01</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Several Core IKVM libraries that can be used to bring Java functionality to .NET</description>
+  </metadata>
+</package>

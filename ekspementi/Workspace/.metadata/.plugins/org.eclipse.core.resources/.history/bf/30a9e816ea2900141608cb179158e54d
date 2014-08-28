@@ -1,0 +1,696 @@
+package com.prediction.RecommenderApp;
+
+import java.io.File;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Vector;
+
+
+
+
+
+
+import org.apache.commons.lang.time.StopWatch;
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.common.Weighting;
+import org.apache.mahout.cf.taste.eval.IRStatistics;
+import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
+import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
+import org.apache.mahout.cf.taste.eval.RecommenderIRStatsEvaluator;
+import org.apache.mahout.cf.taste.impl.eval.AverageAbsoluteDifferenceRecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.eval.GenericRecommenderIRStatsEvaluator;
+import org.apache.mahout.cf.taste.impl.eval.RMSRecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.ItemUserAverageRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.knn.KnnItemBasedRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.knn.NonNegativeQuadraticOptimizer;
+import org.apache.mahout.cf.taste.impl.recommender.knn.Optimizer;
+import org.apache.mahout.cf.taste.impl.recommender.slopeone.MemoryDiffStorage;
+import org.apache.mahout.cf.taste.impl.recommender.slopeone.SlopeOneRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.svd.ALSWRFactorizer;
+import org.apache.mahout.cf.taste.impl.recommender.svd.SVDPlusPlusFactorizer;
+import org.apache.mahout.cf.taste.impl.recommender.svd.SVDRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.SpearmanCorrelationSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.UncenteredCosineSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.Recommender;
+import org.apache.mahout.cf.taste.recommender.slopeone.DiffStorage;
+import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
+import org.apache.mahout.common.RandomUtils;
+import org.apache.mahout.math.stats.OnlineSummarizer;
+
+
+
+public class EvaluateRecommender {
+
+	public static void main(String[] args) throws Exception {
+
+		
+		DataModel model1 = new FileDataModel(new File("data/m1_base.csv"));
+		DataModel model2 = new FileDataModel(new File("data/m2_base.csv"));
+		DataModel model3 = new FileDataModel(new File("data/m3_base.csv"));
+		DataModel model4 = new FileDataModel(new File("data/m4_base.csv"));
+		DataModel model5 = new FileDataModel(new File("data/m5_base.csv"));
+		//RandomUtils.useTestSeed();
+		DataModel model6 = new FileDataModel(new File("data/Fit.csv"));
+		
+		//RecommenderEvaluator////////////////////////////////////////////////////////////////
+		RecommenderEvaluator evaluator = new RMSRecommenderEvaluator();
+		RecommenderEvaluator evaluatora = new AverageAbsoluteDifferenceRecommenderEvaluator();
+		long startTime = System.nanoTime();
+		
+		//Stopwatch/////////////////////////////////////////////////////////////////////////
+		
+		
+		//estimation time of algotithms ////////////////////////////////////////////////////
+			
+		
+		
+		//RecommenderBuilder////////////////////////////////////////////////////////////////
+		
+		
+		RecommenderBuilder knn_Builder = new KnnPearson();
+		Recommender r_knn = knn_Builder.buildRecommender(model1);		
+		List<RecommendedItem> recommendations1 = r_knn.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations1) {
+		  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+		}		System.out.println("\n");		
+
+		// method: Pearson, algorithm: Pearson Correlation, description: from similar items
+		double knn1 = evaluator.evaluate(knn_Builder, null, model1, 0.7, 1.0);
+		double knn2 = evaluator.evaluate(knn_Builder, null, model2, 0.7, 1.0);
+		double knn3 = evaluator.evaluate(knn_Builder, null, model3, 0.7, 1.0);
+		double knn4 = evaluator.evaluate(knn_Builder, null, model4, 0.7, 1.0);
+		double knn5 = evaluator.evaluate(knn_Builder, null, model5, 0.7, 1.0);
+		double knn6 = evaluator.evaluate(knn_Builder, null, model6, 0.7, 1.0);
+
+		// method: Cosine, algorithm: Cosine similarity, description: from similar items
+	
+		RecommenderBuilder cos_Builder = new CosineSimilarity();
+		Recommender r_cos = cos_Builder.buildRecommender(model1);		
+		List<RecommendedItem> recommendations2 = r_cos.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations2) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		
+		double cos1 = evaluator.evaluate(cos_Builder, null, model1, 0.7, 1.0);
+		double cos2 = evaluator.evaluate(cos_Builder, null, model2, 0.7, 1.0);
+		double cos3 = evaluator.evaluate(cos_Builder, null, model3, 0.7, 1.0);
+		double cos4 = evaluator.evaluate(cos_Builder, null, model4, 0.7, 1.0);
+		double cos5 = evaluator.evaluate(cos_Builder, null, model5, 0.7, 1.0);
+		double cos6 = evaluator.evaluate(cos_Builder, null, model6, 0.7, 1.0);
+
+		// method: baseline, algorithm: Baseline, description: User and item averages
+		
+		RecommenderBuilder bas_Builder = new Baseline();
+		Recommender r_bas = bas_Builder.buildRecommender(model1);		
+		List<RecommendedItem> recommendations3 = r_bas.recommend(5, 1122);
+		for (RecommendedItem recommendation : recommendations3) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");		
+		double bas1 = evaluator.evaluate(bas_Builder, null, model1, 0.7, 1.0);
+		double bas2 = evaluator.evaluate(bas_Builder, null, model2, 0.7, 1.0);
+		double bas3 = evaluator.evaluate(bas_Builder, null, model3, 0.7, 1.0);
+		double bas4 = evaluator.evaluate(bas_Builder, null, model4, 0.7, 1.0);
+		double bas5 = evaluator.evaluate(bas_Builder, null, model5, 0.7, 1.0);
+		double bas6 = evaluator.evaluate(bas_Builder, null, model6, 0.7, 1.0);
+
+		// method: item_average, algorithm: Baseline, description: Item averages
+		
+		RecommenderBuilder ibas_Builder = new Item_Baseline();
+		Recommender r_ibas = ibas_Builder.buildRecommender(model1);
+		List<RecommendedItem> recommendations4 = r_ibas.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations4) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		
+		double ibas1 = evaluator.evaluate(ibas_Builder, null, model1, 0.7, 1.0);
+		double ibas2 = evaluator.evaluate(ibas_Builder, null, model2, 0.7, 1.0);
+		double ibas3 = evaluator.evaluate(ibas_Builder, null, model3, 0.7, 1.0);
+		double ibas4 = evaluator.evaluate(ibas_Builder, null, model4, 0.7, 1.0);
+		double ibas5 = evaluator.evaluate(ibas_Builder, null, model5, 0.7, 1.0);
+		double ibas6 = evaluator.evaluate(ibas_Builder, null, model6, 0.7, 1.0);
+
+		// method: slopeone, algorithm: Slope One, description: Rating delta computations
+		
+		RecommenderBuilder s_one_Builder = new SlopeOne();
+		Recommender r_s_one = s_one_Builder.buildRecommender(model1);
+		List<RecommendedItem> recommendations5 = r_s_one.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations5) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		double s_one1 = evaluator.evaluate(s_one_Builder, null, model1, 0.7,1.0);
+		double s_one2 = evaluator.evaluate(s_one_Builder, null, model2, 0.7,1.0);
+		double s_one3 = evaluator.evaluate(s_one_Builder, null, model3, 0.7,1.0);
+		double s_one4 = evaluator.evaluate(s_one_Builder, null, model4, 0.7,1.0);
+		double s_one5 = evaluator.evaluate(s_one_Builder, null, model5, 0.7,1.0);
+		double s_one6 = evaluator.evaluate(s_one_Builder, null, model6, 0.7,1.0);
+
+		// method: svd1, algorithm: SVD, description: ALSWR factorizer, 10 features.
+		
+		RecommenderBuilder svd1_Builder = new SVD1();
+		Recommender r_svd1 = svd1_Builder.buildRecommender(model1);
+		List<RecommendedItem> recommendations6 = r_svd1.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations6) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		double svd11 = evaluator.evaluate(svd1_Builder, null, model1, 0.7, 1.0);
+		double svd12 = evaluator.evaluate(svd1_Builder, null, model2, 0.7, 1.0);
+		double svd13 = evaluator.evaluate(svd1_Builder, null, model3, 0.7, 1.0);
+		double svd14 = evaluator.evaluate(svd1_Builder, null, model4, 0.7, 1.0);
+		double svd15 = evaluator.evaluate(svd1_Builder, null, model5, 0.7, 1.0);
+		double svd16 = evaluator.evaluate(svd1_Builder, null, model6, 0.7, 1.0);
+
+		// method: svd2, algorithm: SVD, description: ALSWR factorizer, 20 features.
+		
+		RecommenderBuilder svd2_Builder = new SVD2();
+		Recommender r_svd2 = svd2_Builder.buildRecommender(model1);
+		List<RecommendedItem> recommendations7 = r_svd2.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations7) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		
+		double svd21 = evaluator.evaluate(svd2_Builder, null, model1, 0.7, 1.0);
+		double svd22 = evaluator.evaluate(svd2_Builder, null, model2, 0.7, 1.0);
+		double svd23 = evaluator.evaluate(svd2_Builder, null, model3, 0.7, 1.0);
+		double svd24 = evaluator.evaluate(svd2_Builder, null, model4, 0.7, 1.0);
+		double svd25 = evaluator.evaluate(svd2_Builder, null, model5, 0.7, 1.0);
+		double svd26 = evaluator.evaluate(svd2_Builder, null, model6, 0.7, 1.0);
+
+		// method: svd3, algorithm: SVD, description: SVDPlusPlusFactorizer, 10 features.
+		RecommenderBuilder svd3_Builder = new SVD3();
+		Recommender r_svd3 = svd3_Builder.buildRecommender(model1);
+		List<RecommendedItem> recommendations8 = r_svd3.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations8) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		
+		double svd31 = evaluator.evaluate(svd3_Builder, null, model1, 0.7, 1.0);
+		double svd32 = evaluator.evaluate(svd3_Builder, null, model2, 0.7, 1.0);
+		double svd33 = evaluator.evaluate(svd3_Builder, null, model3, 0.7, 1.0);
+		double svd34 = evaluator.evaluate(svd3_Builder, null, model4, 0.7, 1.0);
+		double svd35 = evaluator.evaluate(svd3_Builder, null, model5, 0.7, 1.0);
+		double svd36 = evaluator.evaluate(svd3_Builder, null, model6, 0.7, 1.0);
+
+		// method: svd4, algorithm: SVD, description: SVDPlusPlusFactorizer, 10
+		// features.
+		RecommenderBuilder svd4_Builder = new SVD4();		
+		Recommender r_svd4 = svd4_Builder.buildRecommender(model1);
+		List<RecommendedItem> recommendations9 = r_svd4.recommend(5, 6);
+		for (RecommendedItem recommendation : recommendations9) {
+			  System.out.println(recommendation.getItemID()+"\t"+recommendation.getValue());
+					}		System.out.println("\n");	
+		
+		double svd41 = evaluator.evaluate(svd4_Builder, null, model1, 0.7, 1.0);
+		double svd42 = evaluator.evaluate(svd4_Builder, null, model2, 0.7, 1.0);
+		double svd43 = evaluator.evaluate(svd4_Builder, null, model3, 0.7, 1.0);
+		double svd44 = evaluator.evaluate(svd4_Builder, null, model4, 0.7, 1.0);
+		double svd45 = evaluator.evaluate(svd4_Builder, null, model5, 0.7, 1.0);
+		double svd46 = evaluator.evaluate(svd4_Builder, null, model6, 0.7, 1.0);
+
+		System.out.println(
+		"knn_pearson \t"
+				+ round(knn1, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(knn2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(knn3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(knn4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(knn5, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(knn6, 4, BigDecimal.ROUND_HALF_UP) + "\n" 
+				
+				+ "cosine  \t" 
+				+ round(cos1, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(cos2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(cos3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(cos4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(cos5, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(cos6, 4, BigDecimal.ROUND_HALF_UP) + "\n"
+				
+				+ "baseline\t" 
+				+ round(bas1, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(bas2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(bas3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(bas4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(bas5, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(bas6, 4, BigDecimal.ROUND_HALF_UP) + "\n" 
+
+				+ "item_avg\t" 
+				+ round(ibas1, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(ibas2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(ibas3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(ibas4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(ibas5, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(ibas6, 4, BigDecimal.ROUND_HALF_UP) + "\n" 
+
+				+"slope_one\t" 
+				+ round(s_one1, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(s_one2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(s_one3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(s_one4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(s_one5, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(s_one6, 4, BigDecimal.ROUND_HALF_UP) + "\n"
+								
+				+ "SVD_1	\t" 
+				+ round(svd11, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd12, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd13, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd14, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd15, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(svd16, 4, BigDecimal.ROUND_HALF_UP) + "\n"
+				
+				+"SVD_2	\t" 
+				+ round(svd21, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd22, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd23, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd24, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd25, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(svd26, 4, BigDecimal.ROUND_HALF_UP) + "\n" 
+
+				+"SVD_3	\t" 
+				+ round(svd31, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd32, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd33, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd34, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd35, 4, BigDecimal.ROUND_HALF_UP) + "\t" 
+				+ round(svd36, 4, BigDecimal.ROUND_HALF_UP) + "\n" 
+
+				+ "SVD_4	\t" 
+				+ round(svd41, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd42, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd43, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd44, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd45, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(svd46, 4, BigDecimal.ROUND_HALF_UP) + "\n");
+
+		// Agregate recommendres////////////////////////////////////////////////
+
+		// method: KNN, algorithm: Pearson correlation, description: from similar users
+		double knn1a = evaluatora.evaluate(knn_Builder, null, model1, 0.7, 1.0);
+		double knn2a = evaluatora.evaluate(knn_Builder, null, model2, 0.7, 1.0);
+		double knn3a = evaluatora.evaluate(knn_Builder, null, model3, 0.7, 1.0);
+		double knn4a = evaluatora.evaluate(knn_Builder, null, model4, 0.7, 1.0);
+		double knn5a = evaluatora.evaluate(knn_Builder, null, model5, 0.7, 1.0);
+		double knn6a = evaluatora.evaluate(knn_Builder, null, model6, 0.7, 1.0);
+
+		// method: Cosine, algorithm: Cosine similarity, description: from similar users
+		double cos1a = evaluatora.evaluate(cos_Builder, null, model1, 0.7, 1.0);
+		double cos2a = evaluatora.evaluate(cos_Builder, null, model2, 0.7, 1.0);
+		double cos3a = evaluatora.evaluate(cos_Builder, null, model3, 0.7, 1.0);
+		double cos4a = evaluatora.evaluate(cos_Builder, null, model4, 0.7, 1.0);
+		double cos5a = evaluatora.evaluate(cos_Builder, null, model5, 0.7, 1.0);
+		double cos6a = evaluatora.evaluate(cos_Builder, null, model6, 0.7, 1.0);
+
+		// method: baseline, algorithm: Baseline, description: User and item averages
+		double bas1a = evaluatora.evaluate(bas_Builder, null, model1, 0.7, 1.0);
+		double bas2a = evaluatora.evaluate(bas_Builder, null, model2, 0.7, 1.0);
+		double bas3a = evaluatora.evaluate(bas_Builder, null, model3, 0.7, 1.0);
+		double bas4a = evaluatora.evaluate(bas_Builder, null, model4, 0.7, 1.0);
+		double bas5a = evaluatora.evaluate(bas_Builder, null, model5, 0.7, 1.0);
+		double bas6a = evaluatora.evaluate(bas_Builder, null, model6, 0.7, 1.0);
+
+		// method: item_average, algorithm: Baseline, description: Item averages
+		double ibas1a = evaluatora.evaluate(ibas_Builder, null, model1, 0.7,1.0);
+		double ibas2a = evaluatora.evaluate(ibas_Builder, null, model2, 0.7,1.0);
+		double ibas3a = evaluatora.evaluate(ibas_Builder, null, model3, 0.7,1.0);
+		double ibas4a = evaluatora.evaluate(ibas_Builder, null, model4, 0.7,1.0);
+		double ibas5a = evaluatora.evaluate(ibas_Builder, null, model5, 0.7,1.0);
+		double ibas6a = evaluatora.evaluate(ibas_Builder, null, model6, 0.7,1.0);
+
+		// method: slopeone, algorithm: Slope One, description: Rating delta computations
+		double s_one1a = evaluatora.evaluate(s_one_Builder, null, model1, 0.7,	1.0);
+		double s_one2a = evaluatora.evaluate(s_one_Builder, null, model2, 0.7,	1.0);
+		double s_one3a = evaluatora.evaluate(s_one_Builder, null, model3, 0.7,	1.0);
+		double s_one4a = evaluatora.evaluate(s_one_Builder, null, model4, 0.7,	1.0);
+		double s_one5a = evaluatora.evaluate(s_one_Builder, null, model5, 0.7,	1.0);
+		double s_one6a = evaluatora.evaluate(s_one_Builder, null, model6, 0.7,	1.0);
+
+		// method: svd1, algorithm: SVD, description: ALSWR factorizer, 10 features.
+		double svd11a = evaluatora.evaluate(svd1_Builder, null, model1, 0.7,1.0);
+		double svd12a = evaluatora.evaluate(svd1_Builder, null, model2, 0.7,1.0);
+		double svd13a = evaluatora.evaluate(svd1_Builder, null, model3, 0.7,1.0);
+		double svd14a = evaluatora.evaluate(svd1_Builder, null, model4, 0.7,1.0);
+		double svd15a = evaluatora.evaluate(svd1_Builder, null, model5, 0.7,1.0);
+		double svd16a = evaluatora.evaluate(svd1_Builder, null, model6, 0.7,1.0);
+
+		// method: svd2, algorithm: SVD, description: ALSWR factorizer, 20 features.
+		double svd21a = evaluatora.evaluate(svd2_Builder, null, model1, 0.7,1.0);
+		double svd22a = evaluatora.evaluate(svd2_Builder, null, model2, 0.7,1.0);
+		double svd23a = evaluatora.evaluate(svd2_Builder, null, model3, 0.7,1.0);
+		double svd24a = evaluatora.evaluate(svd2_Builder, null, model4, 0.7,1.0);
+		double svd25a = evaluatora.evaluate(svd2_Builder, null, model5, 0.7,1.0);
+		double svd26a = evaluatora.evaluate(svd2_Builder, null, model6, 0.7,1.0);
+
+		// method: svd3, algorithm: SVD, description: SVDPlusPlusFactorizer, 10 features.
+		double svd31a = evaluatora.evaluate(svd3_Builder, null, model1, 0.7,1.0);
+		double svd32a = evaluatora.evaluate(svd3_Builder, null, model2, 0.7,1.0);
+		double svd33a = evaluatora.evaluate(svd3_Builder, null, model3, 0.7,1.0);
+		double svd34a = evaluatora.evaluate(svd3_Builder, null, model4, 0.7,1.0);
+		double svd35a = evaluatora.evaluate(svd3_Builder, null, model5, 0.7,1.0);
+		double svd36a = evaluatora.evaluate(svd3_Builder, null, model6, 0.7,1.0);
+
+		// method: svd4, algorithm: SVD, description: SVDPlusPlusFactorizer, 10 features.
+		double svd41a = evaluatora.evaluate(svd4_Builder, null, model1, 0.7,1.0);
+		double svd42a = evaluatora.evaluate(svd4_Builder, null, model2, 0.7,1.0);
+		double svd43a = evaluatora.evaluate(svd4_Builder, null, model3, 0.7,1.0);
+		double svd44a = evaluatora.evaluate(svd4_Builder, null, model4, 0.7,1.0);
+		double svd45a = evaluatora.evaluate(svd4_Builder, null, model5, 0.7,1.0);
+		double svd46a = evaluatora.evaluate(svd4_Builder, null, model6, 0.7,1.0);
+
+		// Summarizer
+		OnlineSummarizer summarizeLogLikelihood1 = new OnlineSummarizer();
+		OnlineSummarizer summarizeLogLikelihood2 = new OnlineSummarizer();
+		OnlineSummarizer summarizeLogLikelihood3 = new OnlineSummarizer();
+		OnlineSummarizer summarizeLogLikelihood4 = new OnlineSummarizer();
+		OnlineSummarizer summarizeLogLikelihood5 = new OnlineSummarizer();
+		OnlineSummarizer summarizeLogLikelihood6 = new OnlineSummarizer();
+
+		summarizeLogLikelihood1.add(knn1a);
+		summarizeLogLikelihood1.add(cos1a);
+		summarizeLogLikelihood1.add(bas1a);
+		summarizeLogLikelihood1.add(ibas1a);
+		summarizeLogLikelihood1.add(s_one1a);
+		summarizeLogLikelihood1.add(svd11a);
+		summarizeLogLikelihood1.add(svd21a);
+		summarizeLogLikelihood1.add(svd31a);
+		summarizeLogLikelihood1.add(svd41a);
+
+		summarizeLogLikelihood2.add(knn2a);
+		summarizeLogLikelihood2.add(cos2a);
+		summarizeLogLikelihood2.add(bas2a);
+		summarizeLogLikelihood2.add(ibas2a);
+		summarizeLogLikelihood2.add(s_one2a);
+		summarizeLogLikelihood2.add(svd12a);
+		summarizeLogLikelihood2.add(svd22a);
+		summarizeLogLikelihood2.add(svd32a);
+		summarizeLogLikelihood2.add(svd42a);
+
+		summarizeLogLikelihood3.add(knn3a);
+		summarizeLogLikelihood3.add(cos3a);
+		summarizeLogLikelihood3.add(bas3a);
+		summarizeLogLikelihood3.add(ibas3a);
+		summarizeLogLikelihood3.add(s_one3a);
+		summarizeLogLikelihood3.add(svd13a);
+		summarizeLogLikelihood3.add(svd23a);
+		summarizeLogLikelihood3.add(svd33a);
+		summarizeLogLikelihood3.add(svd43a);
+
+		summarizeLogLikelihood4.add(knn4a);
+		summarizeLogLikelihood4.add(cos4a);
+		summarizeLogLikelihood4.add(bas4a);
+		summarizeLogLikelihood4.add(ibas4a);
+		summarizeLogLikelihood4.add(s_one4a);
+		summarizeLogLikelihood4.add(svd14a);
+		summarizeLogLikelihood4.add(svd24a);
+		summarizeLogLikelihood4.add(svd34a);
+		summarizeLogLikelihood4.add(svd44a);
+
+		summarizeLogLikelihood5.add(knn5a);
+		summarizeLogLikelihood5.add(cos5a);
+		summarizeLogLikelihood5.add(bas5a);
+		summarizeLogLikelihood5.add(ibas5a);
+		summarizeLogLikelihood5.add(s_one5a);
+		summarizeLogLikelihood5.add(svd15a);
+		summarizeLogLikelihood5.add(svd25a);
+		summarizeLogLikelihood5.add(svd35a);
+		summarizeLogLikelihood5.add(svd45a);
+		
+		summarizeLogLikelihood6.add(knn6a);
+		summarizeLogLikelihood6.add(cos6a);
+		summarizeLogLikelihood6.add(bas6a);
+		summarizeLogLikelihood6.add(ibas6a);
+		summarizeLogLikelihood6.add(s_one6a);
+		summarizeLogLikelihood6.add(svd16a);
+		summarizeLogLikelihood6.add(svd26a);
+		summarizeLogLikelihood6.add(svd36a);
+		summarizeLogLikelihood6.add(svd46a);
+
+		// Median////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		double med1 = summarizeLogLikelihood1.getMedian();
+		double med2 = summarizeLogLikelihood2.getMedian();
+		double med3 = summarizeLogLikelihood3.getMedian();
+		double med4 = summarizeLogLikelihood4.getMedian();
+		double med5 = summarizeLogLikelihood5.getMedian();
+		double med6 = summarizeLogLikelihood6.getMedian();
+		
+		System.out.println("median	\t"
+				+ round(med1, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(med2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(med3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(med4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(med5, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(med6, 4, BigDecimal.ROUND_HALF_UP) + "\t");
+
+		// Average////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		double avg1 = summarizeLogLikelihood1.getMean();
+		double avg2 = summarizeLogLikelihood2.getMean();
+		double avg3 = summarizeLogLikelihood3.getMean();
+		double avg4 = summarizeLogLikelihood4.getMean();
+		double avg5 = summarizeLogLikelihood5.getMean();
+		double avg6 = summarizeLogLikelihood6.getMean();
+		
+		System.out.println("average  \t"
+				+ round(avg1, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(avg2, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(avg3, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(avg4, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(avg5, 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(avg6, 4, BigDecimal.ROUND_HALF_UP) + "\t");
+
+		// Adaptive////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		//  Errors of SubSets
+		double sumErrors_d1 = knn1 + cos1 + bas1 + ibas1 + s_one1 + svd11+ svd21 + svd31 + svd41;
+		double sumErrors_d2 = knn2 + cos2 + bas2 + ibas2 + s_one2 + svd12+ svd22 + svd32 + svd42;
+		double sumErrors_d3 = knn3 + cos3 + bas3 + ibas3 + s_one3 + svd13+ svd23 + svd33 + svd43;
+		double sumErrors_d4 = knn4 + cos4 + bas4 + ibas4 + s_one4 + svd14+ svd24 + svd34 + svd44;
+		double sumErrors_d5 = knn5 + cos5 + bas5 + ibas5 + s_one5 + svd15+ svd25 + svd35 + svd45;
+		double sumErrors_d6 = knn6 + cos6 + bas6 + ibas6 + s_one6 + svd16+ svd26 + svd36 + svd46;
+		
+		// Ponders
+		double knn1_pond = 1 - (knn1 / sumErrors_d1);
+		double cos1_pond = 1 - (cos1 / sumErrors_d1);
+		double bas1_pond = 1 - (bas1 / sumErrors_d1);
+		double ibas1_pond = 1 - (ibas1 / sumErrors_d1);
+		double s_one1_pond = 1 - (s_one1 / sumErrors_d1);
+		double svd11_pond = 1 - (svd11 / sumErrors_d1);
+		double svd21_pond = 1 - (svd21 / sumErrors_d1);
+		double svd31_pond = 1 - (svd31 / sumErrors_d1);
+		double svd41_pond = 1 - (svd41 / sumErrors_d1);
+
+		double knn2_pond = 1 - (knn2 / sumErrors_d2);
+		double cos2_pond = 1 - (cos2 / sumErrors_d2);
+		double bas2_pond = 1 - (bas2 / sumErrors_d2);
+		double ibas2_pond = 1 - (ibas2 / sumErrors_d2);
+		double s_one2_pond = 1 - (s_one2 / sumErrors_d2);
+		double svd12_pond = 1 - (svd12 / sumErrors_d2);
+		double svd22_pond = 1 - (svd22 / sumErrors_d2);
+		double svd32_pond = 1 - (svd32 / sumErrors_d2);
+		double svd42_pond = 1 - (svd42 / sumErrors_d2);
+
+		double knn3_pond = 1 - (knn3 / sumErrors_d3);
+		double cos3_pond = 1 - (cos3 / sumErrors_d3);
+		double bas3_pond = 1 - (bas3 / sumErrors_d3);
+		double ibas3_pond = 1 - (ibas3 / sumErrors_d3);
+		double s_one3_pond = 1 - (s_one3 / sumErrors_d3);
+		double svd13_pond = 1 - (svd13 / sumErrors_d3);
+		double svd23_pond = 1 - (svd23 / sumErrors_d3);
+		double svd33_pond = 1 - (svd33 / sumErrors_d3);
+		double svd43_pond = 1 - (svd43 / sumErrors_d3);
+
+		double knn4_pond = 1 - (knn4 / sumErrors_d4);
+		double cos4_pond = 1 - (cos4 / sumErrors_d4);
+		double bas4_pond = 1 - (bas4 / sumErrors_d4);
+		double ibas4_pond = 1 - (ibas4 / sumErrors_d4);
+		double s_one4_pond = 1 - (s_one4 / sumErrors_d4);
+		double svd14_pond = 1 - (svd14 / sumErrors_d4);
+		double svd24_pond = 1 - (svd24 / sumErrors_d4);
+		double svd34_pond = 1 - (svd34 / sumErrors_d4);
+		double svd44_pond = 1 - (svd44 / sumErrors_d4);
+
+		double knn5_pond = 1 - (knn5 / sumErrors_d5);
+		double cos5_pond = 1 - (cos5 / sumErrors_d5);
+		double bas5_pond = 1 - (bas5 / sumErrors_d5);
+		double ibas5_pond = 1 - (ibas5 / sumErrors_d5);
+		double s_one5_pond = 1 - (s_one5 / sumErrors_d5);
+		double svd15_pond = 1 - (svd15 / sumErrors_d5);
+		double svd25_pond = 1 - (svd25 / sumErrors_d5);
+		double svd35_pond = 1 - (svd35 / sumErrors_d5);
+		double svd45_pond = 1 - (svd45 / sumErrors_d5);
+		
+		double knn6_pond = 1 - (knn6 / sumErrors_d6);
+		double cos6_pond = 1 - (cos6 / sumErrors_d6);
+		double bas6_pond = 1 - (bas6 / sumErrors_d6);
+		double ibas6_pond = 1 - (ibas6 / sumErrors_d6);
+		double s_one6_pond = 1 - (s_one6 / sumErrors_d6);
+		double svd16_pond = 1 - (svd16 / sumErrors_d6);
+		double svd26_pond = 1 - (svd26 / sumErrors_d6);
+		double svd36_pond = 1 - (svd36 / sumErrors_d6);
+		double svd46_pond = 1 - (svd46 / sumErrors_d6);
+
+		double AP1 = (knn1a * knn1_pond + cos1a * cos1_pond + bas1a * bas1_pond
+				+ ibas1a * ibas1_pond + s_one1a * s_one1_pond + svd11a
+				* svd11_pond + svd21a * svd21_pond + svd31a * svd31_pond
+				+ svd41a * svd41_pond)/9;
+
+		double AP2 = (knn2a * knn2_pond + cos2a * cos2_pond + bas2a * bas2_pond
+				+ ibas2a * ibas2_pond + s_one2a * s_one2_pond + svd12a
+				* svd12_pond + svd22a * svd22_pond + svd32a * svd32_pond
+				+ svd42a * svd42_pond)/9;
+
+		double AP3 = (knn3a * knn3_pond + cos3a * cos3_pond + bas3a * bas3_pond
+				+ ibas3a * ibas3_pond + s_one3a * s_one3_pond + svd13a
+				* svd13_pond + svd23a * svd23_pond + svd33a * svd33_pond
+				+ svd43a * svd43_pond)/9;
+
+		double AP4 = (knn4a * knn4_pond + cos4a * cos4_pond + bas4a * bas4_pond
+				+ ibas4a * ibas4_pond + s_one4a * s_one4_pond + svd14a
+				* svd14_pond + svd24a * svd24_pond + svd34a * svd34_pond
+				+ svd44a * svd44_pond)/9;
+
+		double AP5 = (knn5a * knn5_pond + cos5a * cos5_pond + bas5a * bas5_pond
+				+ ibas5a * ibas5_pond + s_one5a * s_one5_pond + svd15a
+				* svd15_pond + svd25a * svd25_pond + svd35a * svd35_pond
+				+ svd45a * svd45_pond)/9;
+		
+		double AP6 = (knn6a * knn6_pond + cos5a * cos6_pond + bas6a * bas6_pond
+				+ ibas6a * ibas6_pond + s_one6a * s_one6_pond + svd16a
+				* svd16_pond + svd26a * svd26_pond + svd36a * svd36_pond
+				+ svd46a * svd46_pond)/9;
+
+		System.out.println("adaptive  \t"
+				+ round(AP1 , 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(AP2 , 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(AP3 , 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(AP4 , 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(AP5 , 4, BigDecimal.ROUND_HALF_UP) + "\t"
+				+ round(AP6 , 4, BigDecimal.ROUND_HALF_UP) + "\t");
+	}
+
+	public static double median(Vector<Double> d1) {
+		int middle = d1.size() / 2;
+		if (d1.size() % 2 == 1) {
+			return d1.elementAt(middle);
+		} else {
+			return (d1.elementAt(middle - 1) + d1.elementAt(middle)) / 2.0;
+		}
+	}
+
+	// Double Value Rounded
+	// ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+	private static double round(double unrounded, int precision,
+			int roundingMode) {
+		if (unrounded > 0) {
+			BigDecimal bd = new BigDecimal(unrounded);
+			BigDecimal rounded = bd.setScale(precision, roundingMode);
+			return rounded.doubleValue();
+		}
+		return unrounded;
+	}
+}
+
+// Pearson Correlation///////////////////////////////////////////////////////////////////////////////////////////////////
+
+class KnnPearson implements RecommenderBuilder {
+
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
+		UserNeighborhood neighborhood = new NearestNUserNeighborhood(5,
+				similarity, dataModel);
+		return new GenericUserBasedRecommender(dataModel, neighborhood,
+				similarity);
+	}
+}
+
+// UncenteredCosineSimilarity//////////////////////////////////////////////////////////////////////////////////////////
+class CosineSimilarity implements RecommenderBuilder {
+
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		ItemSimilarity similarity = new UncenteredCosineSimilarity(dataModel);
+		return new GenericItemBasedRecommender(dataModel, similarity);
+	}
+}
+
+// ItemUserAverage//////////////////////////////////////////////////////////////////////////////////////////////////////
+class Baseline implements RecommenderBuilder {
+
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		return new ItemUserAverageRecommender(dataModel);
+	}
+}
+
+// ItemAverage//////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Item_Baseline implements RecommenderBuilder {
+
+	@SuppressWarnings("deprecation")
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		ItemSimilarity similarity = new LogLikelihoodSimilarity(dataModel);
+		Optimizer optimizer = new NonNegativeQuadraticOptimizer();
+		return new KnnItemBasedRecommender(dataModel, similarity, optimizer, 10);
+	}
+	// ItemSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
+	// return new GenericItemBasedRecommender(dataModel,similarity);}
+}
+
+// SlopeOne/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class SlopeOne implements RecommenderBuilder {
+	@SuppressWarnings("deprecation")
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		DiffStorage diffStorage = new MemoryDiffStorage(dataModel,Weighting.UNWEIGHTED, Long.MAX_VALUE);
+		return new SlopeOneRecommender(dataModel, Weighting.UNWEIGHTED,	Weighting.UNWEIGHTED, diffStorage);
+	}
+}
+
+// Singular Value Decomposition - ALSWRFactorizer - 10
+// Features/////////////////////////////////////////////////////////
+class SVD1 implements RecommenderBuilder {
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		return new SVDRecommender(dataModel, new ALSWRFactorizer(dataModel, 10,
+				0.05, 10));
+	}
+}
+
+// Singular Value Decomposition - ALSWRFactorizer - 20
+// Features/////////////////////////////////////////////////////////
+class SVD2 implements RecommenderBuilder {
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		return new SVDRecommender(dataModel, new ALSWRFactorizer(dataModel, 20,
+				0.08, 10));
+	}
+}
+
+// Singular Value Decomposition - SVDPlusPlusFactorizer - 10
+// Features////////////////////////////////////////////////////
+class SVD3 implements RecommenderBuilder {
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		return new SVDRecommender(dataModel, new SVDPlusPlusFactorizer(
+				dataModel, 10, 10));
+	}
+}
+
+// Singular Value Decomposition - SVDPlusPlusFactorizer - 10
+// Features////////////////////////////////////////////////////
+class SVD4 implements RecommenderBuilder {
+	public Recommender buildRecommender(DataModel dataModel)
+			throws TasteException {
+		return new SVDRecommender(dataModel, new SVDPlusPlusFactorizer(
+				dataModel, 20, 10));
+	}
+}

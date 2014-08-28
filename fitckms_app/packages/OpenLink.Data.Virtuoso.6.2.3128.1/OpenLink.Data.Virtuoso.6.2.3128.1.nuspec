@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>OpenLink.Data.Virtuoso</id>
+    <version>6.2.3128.1</version>
+    <title>OpenLink Virtuoso ADO.Net Provider</title>
+    <authors>OpenLinkSW</authors>
+    <owners>OpenLinkSW</owners>
+    <projectUrl>http://virtuoso.openlinksw.com/dataspace/dav/wiki/Main/VirtAdoNet35Provider</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An ADO.Net Provider for OpenLink Virtuoso.</description>
+    <tags>SQL RDF Virtuoso RDBMS Database ADO.Net ADO</tags>
+  </metadata>
+</package>
