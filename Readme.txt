@@ -17,7 +17,7 @@ Uputsvo:
 
 U folderu "master_teza" nalazi se finalna verzija master rada, sa ekstenzijama .docx i .pdf
 
-U folderu "prilozi" nalaze se grafike i proraèuni izrašeni u toku pisanja rad
+U folderu "prilozi" nalaze se grafike i proraèuni izvršeni u toku pisanja rad
 
 U folderu "eksperimenti" nalazi radni prostor za Eclipse okruženje, odnosno klase pomoæu kojih su izvršeni eksperimenti
 
